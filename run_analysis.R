@@ -4,7 +4,7 @@ library(data.table)
 library(plyr)
 ## Load lookup tables and assign headers
 activity_labels<-read.table("activity_labels.txt", header=FALSE)
-colnames(activity_labels)<-c("activity_ID", "activity_Desc") 
+colnames(activity_labels)<-c("activity_id", "activity_Desc") 
 features<-read.table("features.txt", header=FALSE)
 colnames(features)<-c("feature_ID", "feature_desc") 
 
@@ -56,7 +56,7 @@ colnames(big_set)<-c(colnames(train_set))
 
 ## Convert to data table for easier manipulation
 big_set<-as.data.table(big_set)
-activity_lables<-as.data.table(activity_labels)
+activity_labels<-as.data.table(activity_labels)
 
 ## Create an index list to contain the ID fields and just those fields that are calculations of mean 
 ## and standard deviation
@@ -66,4 +66,10 @@ col_for_mean<-c(grep("*mean()*", colnames(big_set)), grep("*std()*", colnames(bi
 filtered_set<-big_set[, c(filtered_columns), with=FALSE]
 
 ## Calculate the mean for each variable by activity and subject
+mean_set<-filtered_set[, sapply(.SD, function(x) list(mean=mean(x))), by=list(activity_id, subject_id)]
 
+## Join the mean_set to the activity name in the activity_labels table
+final_set<-join(activity_labels, mean_set, by=activity_id, type="inner", match="all")
+
+## Write file out to text file
+write.table(final_set, file="final.txt", append=FALSE, sep=",")
