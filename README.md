@@ -33,4 +33,11 @@ The following logic was used to create the tidy data set: <p>
 10. Repeat steps 3-9 for the files in the Train folder<br>
 11. Combine the data from Test and Train using rbind<br>
 12. Convert data frame to a data table<br>
+13. Create an index list to contain the ID fields and just those fields that are calculations of mean and standard deviation using the *mean()* and *std()* as the text filter on the column name array<br>
+14. Filter columns to only include mean and standard deviation calculations <br>
+15. Calculate the mean for each variable by activity and subject <br>
+16. Join the mean_set to the activity name in the activity_labels table <br>
+17. Write the final_set data table to the final_set.csv file<p>
+
+
 
