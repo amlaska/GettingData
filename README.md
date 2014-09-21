@@ -6,6 +6,18 @@ The goal of run_analysis.R is to perform the following tasks: <p>
 3. Use descriptive activity names to name the activities in the data set. <br>
 4. Appropriately label the data set with descriptive variable names. <br>
 5. From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject. <p>
+ 
+The data for the project can be downloaded from:<p>
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip <p>
+
+A description of the data can be found here:<p>
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones<p>
+
+For each of the data sets, there is a set of activity labels (found in the y_test.txt and y_train.txt files) that can be joined against the values in the activity_labels.txt file to get the meaningful names for each of the activities the subjects performed. The results of the study are stored in variables in the x_test.txt and x_train.txt files.<p>
+
+
 
 The following logic was used to create the tidy data set: <p>
 
