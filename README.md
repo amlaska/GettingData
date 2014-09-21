@@ -39,5 +39,89 @@ The following logic was used to create the tidy data set: <p>
 16. Join the mean_set to the activity name in the activity_labels table <br>
 17. Write the final_set data table to the final_set.csv file<p>
 
+<h2>Code Book</h2>
+Factors<p>
+activity_id: The integer identifier for activities performed during the study<br>
+activity_Desc: Character description of each activity<br>
+subject_id: The integer identifier for each subject in the study<p>
 
-
+Variables: Numberic data calculated as the mean for each activity and subject<p>
+tBodyAcc-mean()-X.mean<br>
+tBodyAcc-mean()-Y.mean<br>
+tBodyAcc-mean()-Z.mean<br>
+tGravityAcc-mean()-X.mean<br>
+tGravityAcc-mean()-Y.mean<br>
+tGravityAcc-mean()-Z.mean<br>
+tBodyAccJerk-mean()-X.mean<br>
+tBodyAccJerk-mean()-Y.mean<br>
+tBodyAccJerk-mean()-Z.mean<br>
+tBodyGyro-mean()-X.mean<br>
+tBodyGyro-mean()-Y.mean<br>
+tBodyGyro-mean()-Z.mean<br>
+tBodyGyroJerk-mean()-X.mean<br>
+tBodyGyroJerk-mean()-Y.mean<br>
+tBodyGyroJerk-mean()-Z.mean<br>
+tBodyAccMag-mean().mean<br>
+tGravityAccMag-mean().mean<br>
+tBodyAccJerkMag-mean().mean<br>
+tBodyGyroMag-mean().mean<br>
+tBodyGyroJerkMag-mean().mean<br>
+fBodyAcc-mean()-X.mean<br>
+fBodyAcc-mean()-Y.mean<br>
+fBodyAcc-mean()-Z.mean<br>
+fBodyAcc-meanFreq()-X.mean<br>
+fBodyAcc-meanFreq()-Y.mean<br>
+fBodyAcc-meanFreq()-Z.mean<br>
+fBodyAccJerk-mean()-X.mean<br>
+fBodyAccJerk-mean()-Y.mean<br>
+fBodyAccJerk-mean()-Z.mean<br>
+fBodyAccJerk-meanFreq()-X.mean<br>
+fBodyAccJerk-meanFreq()-Y.mean<br>
+fBodyAccJerk-meanFreq()-Z.mean<br>
+fBodyGyro-mean()-X.mean<br>
+fBodyGyro-mean()-Y.mean<br>
+fBodyGyro-mean()-Z.mean<br>
+fBodyGyro-meanFreq()-X.mean<br>
+fBodyGyro-meanFreq()-Y.mean<br>
+fBodyGyro-meanFreq()-Z.mean<br>
+fBodyAccMag-mean().mean<br>
+fBodyAccMag-meanFreq().mean<br>
+fBodyBodyAccJerkMag-mean().mean<br>
+fBodyBodyAccJerkMag-meanFreq().mean<br>
+fBodyBodyGyroMag-mean().mean<br>
+fBodyBodyGyroMag-meanFreq().mean<br>
+fBodyBodyGyroJerkMag-mean().mean<br>
+fBodyBodyGyroJerkMag-meanFreq().mean<br>
+tBodyAcc-std()-X.mean<br>
+tBodyAcc-std()-Y.mean<br>
+tBodyAcc-std()-Z.mean<br>
+tGravityAcc-std()-X.mean<br>
+tGravityAcc-std()-Y.mean<br>
+tGravityAcc-std()-Z.mean<br>
+tBodyAccJerk-std()-X.mean<br>
+tBodyAccJerk-std()-Y.mean<br>
+tBodyAccJerk-std()-Z.mean<br>
+tBodyGyro-std()-X.mean<br>
+tBodyGyro-std()-Y.mean<br>
+tBodyGyro-std()-Z.mean<br>
+tBodyGyroJerk-std()-X.mean<br>
+tBodyGyroJerk-std()-Y.mean<br>
+tBodyGyroJerk-std()-Z.mean<br>
+tBodyAccMag-std().mean<br>
+tGravityAccMag-std().mean<br>
+tBodyAccJerkMag-std().mean<br>
+tBodyGyroMag-std().mean<br>
+tBodyGyroJerkMag-std().mean<br>
+fBodyAcc-std()-X.mean<br>
+fBodyAcc-std()-Y.mean<br>
+fBodyAcc-std()-Z.mean<br>
+fBodyAccJerk-std()-X.mean<br>
+fBodyAccJerk-std()-Y.mean<br>
+fBodyAccJerk-std()-Z.mean<br>
+fBodyGyro-std()-X.mean<br>
+fBodyGyro-std()-Y.mean<br>
+fBodyGyro-std()-Z.mean<br>
+fBodyAccMag-std().mean<br>
+fBodyBodyAccJerkMag-std().mean<br>
+fBodyBodyGyroMag-std().mean<br>
+fBodyBodyGyroJerkMag-std().mean<br>
