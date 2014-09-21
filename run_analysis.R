@@ -24,10 +24,10 @@ test_y<-c(read.table("test/y_test.txt", header = FALSE))
 subject_test<-c(read.table("test/subject_test.txt", header = FALSE))
 
 ## Combine subject, activity, and test data into one big Test data set
-test_set<-cbind(test_y, subject_test, test_x)
+test_set<-cbind(subject_test, test_y, test_x)
 
 ## Apply column names
-colnames(test_set)<-c("activity_id", "subject_id", colnames(test_x))
+colnames(test_set)<-c("subject_id", "activity_id", colnames(test_x))
 
 ## Load fact tables from train folder
 x_train<-c(read.table("train/X_train.txt", header = FALSE))
@@ -45,10 +45,10 @@ train_y<-c(read.table("train/y_train.txt", header = FALSE))
 subject_train<-c(read.table("train/subject_train.txt", header = FALSE))
 
 ## Combine subject, activity, and test data into one big Train data set
-train_set<-cbind(train_y, subject_train, train_x)
+train_set<-cbind(subject_train, train_y, train_x)
 
 ## Apply column names
-colnames(train_set)<-c("activity_id", "subject_id", colnames(train_x))
+colnames(train_set)<-c("subject_id", "activity_id", colnames(train_x))
 
 ## Combine data sets
 big_set<-rbind(test_set, train_set)
@@ -64,12 +64,13 @@ filtered_columns<-c(grep("*_id*", colnames(big_set)), grep("*mean()*", colnames(
 col_for_mean<-c(grep("*mean()*", colnames(big_set)), grep("*std()*", colnames(big_set)))
 ## Filter columns to only include mean and standard deviation calculations
 filtered_set<-big_set[, c(filtered_columns), with=FALSE]
-
+filtered_cols<-colnames(filtered_set)
 ## Calculate the mean for each variable by activity and subject
 mean_set<-filtered_set[, sapply(.SD, function(x) list(mean=mean(x))), by=list(activity_id, subject_id)]
 
 ## Join the mean_set to the activity name in the activity_labels table
-final_set<-join(activity_labels, mean_set, by=activity_id, type="inner", match="all")
+final_set<-join(activity_labels, mean_set, type="inner")
+
 
 ## Write file out to text file
-write.table(final_set, file="final.txt", append=FALSE, sep=",")
+write.csv(final_set, file="final.csv")
